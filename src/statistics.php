@@ -136,11 +136,6 @@ $conn->close();
                 <div class="chart-bar-color" style="background-color: #e74c3c;"></div>
             </div>
             <div class="chart-bar">
-                <div class="chart-bar-label">Avanzar</div>
-                <div class="chart-bar-value"><?php echo $statistics['Avanzar'] ?? 0; ?></div>
-                <div class="chart-bar-color" style="background-color: #f39c12;"></div>
-            </div>
-            <div class="chart-bar">
                 <div class="chart-bar-label">PSOE</div>
                 <div class="chart-bar-value"><?php echo $statistics['PSOE'] ?? 0; ?></div>
                 <div class="chart-bar-color" style="background-color: #9c27b0;"></div>
