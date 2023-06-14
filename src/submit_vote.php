@@ -1,3 +1,35 @@
+<?php
+$servername = "192.168.58.151";
+$username = "root";
+$password = "bolson";
+$dbname = "encuesta";
+
+// Verificar si se recibieron datos de voto
+if (isset($_POST['opcion'])) {
+    $opcion = $_POST['opcion'];
+
+    // Conexión a la base de datos
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Verificar la conexión
+    if ($conn->connect_error) {
+        die("Error en la conexión a la base de datos: " . $conn->connect_error);
+    }
+
+    // Insertar el voto en la base de datos
+    $sql = "INSERT INTO encuesta (opcion) VALUES ('$opcion')";
+    if ($conn->query($sql) === TRUE) {
+        $message = "Su voto ha sido enviado correctamente.";
+    } else {
+        $message = "Error al enviar el voto: " . $conn->error;
+    }
+
+    $conn->close();
+} else {
+    $message = "No se recibieron datos de voto.";
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,7 +88,7 @@
     <div class="container">
         <h1>Resultado del Voto</h1>
 
-        <p class="message">Su voto ha sido enviado correctamente.</p>
+        <p class="message"><?php echo $message; ?></p>
 
         <div class="btn-container">
             <a class="btn" href="statistics.php">Ver Estadísticas</a>
