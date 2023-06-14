@@ -75,7 +75,7 @@ $conn->close();
         }
 
         .chart-bar-label {
-            flex: 0 0 200px;
+            flex: 0 0 150px;
             text-align: right;
             padding-right: 10px;
             color: #ffffff;
@@ -84,14 +84,14 @@ $conn->close();
         .chart-bar-value {
             flex: 1;
             color: #ffffff;
-            height: 30px;
-            line-height: 30px;
+            height: 24px;
+            line-height: 24px;
             border-radius: 5px;
         }
 
         .chart-bar-color {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             border-radius: 5px;
             margin-left: 10px;
         }
@@ -118,48 +118,50 @@ $conn->close();
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        </head>
-            <body>
-                <div class="chart-container">
-    <p class="chart-title">Opciones de Voto</p>
-                <div class="chart-bar">
-                    <div class="chart-bar-label">Unidas Podemos</div>
-                    <div class="chart-bar-value"><?php echo $statistics['Unidas Podemos'] ?? 0; ?></div>
-                    <div class="chart-bar-color" style="background-color: #8e44ad;"></div>
-                </div>
-                <div class="chart-bar">
-                    <div class="chart-bar-label">Sumar</div>
-                    <div class="chart-bar-value"><?php echo $statistics['Sumar'] ?? 0; ?></div>
-                    <div class="chart-bar-color" style="background-color: #e91e63;"></div>
-                </div>
-                <div class="chart-bar">
-                    <div class="chart-bar-label">PSOE</div>
-                    <div class="chart-bar-value"><?php echo $statistics['PSOE'] ?? 0; ?></div>
-                    <div class="chart-bar-color" style="background-color: #ff0000;"></div>
-                </div>
-                <div class="chart-bar">
-                    <div class="chart-bar-label">PP</div>
-                    <div class="chart-bar-value"><?php echo $statistics['PP'] ?? 0; ?></div>
-                    <div class="chart-bar-color" style="background-color: #3f51b5;"></div>
-                </div>
-                <div class="chart-bar">
-                    <div class="chart-bar-label">VOX</div>
-                    <div class="chart-bar-value"><?php echo $statistics['VOX'] ?? 0; ?></div>
-                    <div class="chart-bar-color" style="background-color: #4caf50;"></div>
-                </div>
-                <div class="chart-bar">
-                    <div class="chart-bar-label">Otros/No sabe</div>
-                    <div class="chart-bar-value"><?php echo $statistics['Otros/No sabe'] ?? 0; ?></div>
-                    <div class="chart-bar-color" style="background-color: #607d8b;"></div>
-                </div>
+</head>
+<body>
+    <div class="container">
+        <h1>Estadísticas de la Encuesta</h1>
+
+        <div class="chart-container">
+            <p class="chart-title">Opciones de Voto</p>
+            <div class="chart-bar">
+                <div class="chart-bar-label">Unidas Podemos</div>
+                <div class="chart-bar-value"><?php echo $statistics['Unidas Podemos'] ?? 0; ?></div>
+                <div class="chart-bar-color" style="background-color: #8e44ad;"></div>
             </div>
-
-            <canvas id="chart"></canvas>
-
-            <div class="btn-container">
-                <a class="btn" href="index.php">Volver a la Encuesta</a>
+            <div class="chart-bar">
+                <div class="chart-bar-label">Sumar</div>
+                <div class="chart-bar-value"><?php echo $statistics['Sumar'] ?? 0; ?></div>
+                <div class="chart-bar-color" style="background-color: #e91e63;"></div>
             </div>
+            <div class="chart-bar">
+                <div class="chart-bar-label">PSOE</div>
+                <div class="chart-bar-value"><?php echo $statistics['PSOE'] ?? 0; ?></div>
+                <div class="chart-bar-color" style="background-color: #ff0000;"></div>
+            </div>
+            <div class="chart-bar">
+                <div class="chart-bar-label">PP</div>
+                <div class="chart-bar-value"><?php echo $statistics['PP'] ?? 0; ?></div>
+                <div class="chart-bar-color" style="background-color: #3f51b5;"></div>
+            </div>
+            <div class="chart-bar">
+                <div class="chart-bar-label">VOX</div>
+                <div class="chart-bar-value"><?php echo $statistics['VOX'] ?? 0; ?></div>
+                <div class="chart-bar-color" style="background-color: #4caf50;"></div>
+            </div>
+            <div class="chart-bar">
+                <div class="chart-bar-label">Otros/No sabe</div>
+                <div class="chart-bar-value"><?php echo $statistics['Otros/No sabe'] ?? 0; ?></div>
+                <div class="chart-bar-color" style="background-color: #607d8b;"></div>
+            </div>
+        </div>
 
+        <canvas id="chart"></canvas>
+
+        <div class="btn-container">
+            <a class="btn" href="index.php">Volver a la Encuesta</a>
+        </div>
     </div>
 
     <script>
