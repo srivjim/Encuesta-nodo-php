@@ -35,38 +35,99 @@ $conn->close();
         }
 
         .container {
-            max-width: 500px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
-        .statistics {
-            margin-top: 20px;
+        h1 {
+            color: #333333;
+            font-size: 32px;
+            margin-bottom: 30px;
         }
 
-        .option {
+        .chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .chart-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .chart-bar {
+            display: flex;
+            align-items: center;
             margin-bottom: 10px;
         }
+
+        .chart-bar-label {
+            flex: 0 0 120px;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .chart-bar-value {
+            flex: 1;
+            background-color: #4CAF50;
+            color: #ffffff;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 5px;
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Estadísticas de la Encuesta</h1>
 
-        <div class="statistics">
-            <?php foreach ($statistics as $opcion => $total) : ?>
-                <div class="option">
-                    <strong><?php echo $opcion; ?></strong>: <?php echo $total; ?> votos
-                </div>
-            <?php endforeach; ?>
+        <div class="chart-container">
+            <canvas id="chart"></canvas>
         </div>
+
+        <script>
+            // Obtener los datos de PHP
+            var statistics = <?php echo json_encode($statistics); ?>;
+
+            // Convertir los datos a formato adecuado para Chart.js
+            var labels = Object.keys(statistics);
+            var values = Object.values(statistics);
+
+            // Configuración de la gráfica
+            var ctx = document.getElementById('chart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Votos',
+                        data: values,
+                        backgroundColor: '#4CAF50'
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            precision: 0
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        </script>
 
         <div class="btn-container">
             <a class="btn" href="index.php">Volver a la Encuesta</a>
