@@ -83,7 +83,6 @@ $conn->close();
 
         .chart-bar-value {
             flex: 1;
-            background-color: #4CAF50;
             color: #ffffff;
             height: 30px;
             line-height: 30px;
@@ -122,14 +121,17 @@ $conn->close();
             <div class="chart-bar">
                 <div class="chart-bar-label">Unidas Podemos</div>
                 <div class="chart-bar-value"><?php echo $statistics['Unidas Podemos'] ?? 0; ?></div>
+                <div class="chart-bar-color" style="background-color: #3498db;"></div>
             </div>
             <div class="chart-bar">
                 <div class="chart-bar-label">Sumar</div>
                 <div class="chart-bar-value"><?php echo $statistics['Sumar'] ?? 0; ?></div>
+                <div class="chart-bar-color" style="background-color: #e74c3c;"></div>
             </div>
             <div class="chart-bar">
                 <div class="chart-bar-label">Avanzar</div>
                 <div class="chart-bar-value"><?php echo $statistics['Avanzar'] ?? 0; ?></div>
+                <div class="chart-bar-color" style="background-color: #f39c12;"></div>
             </div>
         </div>
 
@@ -178,5 +180,4 @@ $conn->close();
     </div>
 </body>
 </html>
-
 
