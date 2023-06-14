@@ -118,44 +118,41 @@ $conn->close();
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-    <div class="container">
-        <h1>Estadísticas de la Encuesta</h1>
-
-        <div class="chart-container">
-            <p class="chart-title">Opciones de Voto</p>
-            <div class="chart-bar">
-                <div class="chart-bar-label">Unidas Podemos</div>
-                <div class="chart-bar-value"><?php echo $statistics['Unidas Podemos'] ?? 0; ?></div>
-                <div class="chart-bar-color" style="background-color: #3498db;"></div>
+        </head>
+            <body>
+                <div class="chart-container">
+                <p class="chart-title">Opciones de Voto</p>
+                <div class="chart-bar">
+                    <div class="chart-bar-label">Unidas Podemos</div>
+                    <div class="chart-bar-value"><?php echo $statistics['Unidas Podemos'] ?? 0; ?></div>
+                    <div class="chart-bar-color" style="background-color: #8e44ad;"></div>
+                </div>
+                <div class="chart-bar">
+                    <div class="chart-bar-label">Sumar</div>
+                    <div class="chart-bar-value"><?php echo $statistics['Sumar'] ?? 0; ?></div>
+                    <div class="chart-bar-color" style="background-color: #e91e63;"></div>
+                </div>
+                <div class="chart-bar">
+                    <div class="chart-bar-label">PSOE</div>
+                    <div class="chart-bar-value"><?php echo $statistics['PSOE'] ?? 0; ?></div>
+                    <div class="chart-bar-color" style="background-color: #ff0000;"></div>
+                </div>
+                <div class="chart-bar">
+                    <div class="chart-bar-label">PP</div>
+                    <div class="chart-bar-value"><?php echo $statistics['PP'] ?? 0; ?></div>
+                    <div class="chart-bar-color" style="background-color: #3f51b5;"></div>
+                </div>
+                <div class="chart-bar">
+                    <div class="chart-bar-label">VOX</div>
+                    <div class="chart-bar-value"><?php echo $statistics['VOX'] ?? 0; ?></div>
+                    <div class="chart-bar-color" style="background-color: #4caf50;"></div>
+                </div>
+                <div class="chart-bar">
+                    <div class="chart-bar-label">Otros/No sabe</div>
+                    <div class="chart-bar-value"><?php echo $statistics['Otros/No sabe'] ?? 0; ?></div>
+                    <div class="chart-bar-color" style="background-color: #607d8b;"></div>
+                </div>
             </div>
-            <div class="chart-bar">
-                <div class="chart-bar-label">Sumar</div>
-                <div class="chart-bar-value"><?php echo $statistics['Sumar'] ?? 0; ?></div>
-                <div class="chart-bar-color" style="background-color: #e74c3c;"></div>
-            </div>
-            <div class="chart-bar">
-                <div class="chart-bar-label">PSOE</div>
-                <div class="chart-bar-value"><?php echo $statistics['PSOE'] ?? 0; ?></div>
-                <div class="chart-bar-color" style="background-color: #9c27b0;"></div>
-            </div>
-            <div class="chart-bar">
-                <div class="chart-bar-label">PP</div>
-                <div class="chart-bar-value"><?php echo $statistics['PP'] ?? 0; ?></div>
-                <div class="chart-bar-color" style="background-color: #3f51b5;"></div>
-            </div>
-            <div class="chart-bar">
-                <div class="chart-bar-label">VOX</div>
-                <div class="chart-bar-value"><?php echo $statistics['VOX'] ?? 0; ?></div>
-                <div class="chart-bar-color" style="background-color: #2196f3;"></div>
-            </div>
-            <div class="chart-bar">
-                <div class="chart-bar-label">Otros/No sabe</div>
-                <div class="chart-bar-value"><?php echo $statistics['Otros/No sabe'] ?? 0; ?></div>
-                <div class="chart-bar-color" style="background-color: #607d8b;"></div>
-            </div>
-        </div>
 
         <canvas id="chart"></canvas>
 
