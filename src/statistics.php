@@ -89,13 +89,6 @@ $conn->close();
             border-radius: 5px;
         }
 
-        .chart-bar-color {
-            width: 20px;
-            height: 20px;
-            margin-left: 10px;
-            border-radius: 50%;
-        }
-
         .btn-container {
             display: flex;
             justify-content: center;
@@ -140,26 +133,6 @@ $conn->close();
                 <div class="chart-bar-value"><?php echo $statistics['Avanzar'] ?? 0; ?></div>
                 <div class="chart-bar-color" style="background-color: #f39c12;"></div>
             </div>
-            <div class="chart-bar">
-                <div class="chart-bar-label">PSOE</div>
-                <div class="chart-bar-value"><?php echo $statistics['PSOE'] ?? 0; ?></div>
-                <div class="chart-bar-color" style="background-color: #9b59b6;"></div>
-            </div>
-            <div class="chart-bar">
-                <div class="chart-bar-label">PP</div>
-                <div class="chart-bar-value"><?php echo $statistics['PP'] ?? 0; ?></div>
-                <div class="chart-bar-color" style="background-color: #f1c40f;"></div>
-            </div>
-            <div class="chart-bar">
-                <div class="chart-bar-label">VOX</div>
-                <div class="chart-bar-value"><?php echo $statistics['VOX'] ?? 0; ?></div>
-                <div class="chart-bar-color" style="background-color: #27ae60;"></div>
-            </div>
-            <div class="chart-bar">
-                <div class="chart-bar-label">Otros/No sabe</div>
-                <div class="chart-bar-value"><?php echo $statistics['Otros/No sabe'] ?? 0; ?></div>
-                <div class="chart-bar-color" style="background-color: #95a5a6;"></div>
-            </div>
         </div>
 
         <script>
@@ -171,7 +144,7 @@ $conn->close();
             var values = Object.values(statistics);
 
             // Definir los colores para cada opción
-            var colors = ['#3498db', '#e74c3c', '#f39c12', '#9b59b6', '#f1c40f', '#27ae60', '#95a5a6'];
+            var colors = ['#3498db', '#e74c3c', '#f39c12'];
 
             // Configuración de la gráfica
             var ctx = document.getElementById('chart').getContext('2d');
