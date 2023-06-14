@@ -101,6 +101,20 @@ $conn->close();
             var labels = Object.keys(statistics);
             var values = Object.values(statistics);
 
+            // Definir los colores para cada candidato
+            var colors = [];
+            labels.forEach(function(label) {
+                if (label === 'Candidato A') {
+                    colors.push('#3498db'); // Azul
+                } else if (label === 'Candidato B') {
+                    colors.push('#e74c3c'); // Rojo
+                } else if (label === 'Candidato C') {
+                    colors.push('#f39c12'); // Naranja
+                } else {
+                    colors.push('#4CAF50'); // Verde (por defecto)
+                }
+            });
+
             // Configuración de la gráfica
             var ctx = document.getElementById('chart').getContext('2d');
             var chart = new Chart(ctx, {
@@ -110,7 +124,7 @@ $conn->close();
                     datasets: [{
                         label: 'Votos',
                         data: values,
-                        backgroundColor: '#4CAF50'
+                        backgroundColor: colors
                     }]
                 },
                 options: {
