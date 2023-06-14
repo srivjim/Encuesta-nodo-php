@@ -80,27 +80,27 @@
 
         <form action="submit_vote.php" method="POST" class="form-container">
             <div class="option">
-                <input type="radio" name="opcion" value="Candidato A" id="opcion_a">
+                <input type="radio" name="opcion" value="PP" id="opcion_a">
                 <label for="opcion_a" style="color: #3498db;">PP</label>
             </div>
             <div class="option">
-                <input type="radio" name="opcion" value="Candidato B" id="opcion_b">
+                <input type="radio" name="opcion" value="PSOE" id="opcion_b">
                 <label for="opcion_b" style="color: #e74c3c;">PSOE</label>
             </div>
             <div class="option">
-                <input type="radio" name="opcion" value="Candidato C" id="opcion_c">
+                <input type="radio" name="opcion" value="Unidas Podemos" id="opcion_c">
                 <label for="opcion_c" style="color: #9b59b6;">Unidas Podemos</label>
             </div>
             <div class="option">
-                <input type="radio" name="opcion" value="Candidato D" id="opcion_d">
+                <input type="radio" name="opcion" value="Sumar" id="opcion_d">
                 <label for="opcion_d" style="color: #f06292;">Sumar</label>
             </div>
             <div class="option">
-                <input type="radio" name="opcion" value="Candidato E" id="opcion_e">
+                <input type="radio" name="opcion" value="VOX" id="opcion_e">
                 <label for="opcion_e">VOX</label>
             </div>
             <div class="option">
-                <input type="radio" name="opcion" value="Candidato F" id="opcion_f">
+                <input type="radio" name="opcion" value="Otros/No sabe" id="opcion_f">
                 <label for="opcion_f">Otros/No sabe</label>
             </div>
             <div class="btn-container">
