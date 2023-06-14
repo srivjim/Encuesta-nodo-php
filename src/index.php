@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Encuesta Electoral</title>
+    <title>Elecciones Generales 2023</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
+            background-color: #f9f9f9;
         }
 
         .container {
@@ -22,6 +22,12 @@
             color: #333333;
             font-size: 32px;
             margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #666666;
+            font-size: 20px;
+            margin-bottom: 20px;
         }
 
         .form-container {
@@ -43,6 +49,7 @@
 
         .option label {
             font-size: 18px;
+            color: #333333;
         }
 
         .btn-container {
@@ -68,28 +75,33 @@
 </head>
 <body>
     <div class="container">
-        <h1>Encuesta Electoral</h1>
+        <h1>Elecciones Generales 2023</h1>
+        <h2>¿Quién crees que va a ganar?</h2>
 
         <form action="submit_vote.php" method="POST" class="form-container">
             <div class="option">
                 <input type="radio" name="opcion" value="Candidato A" id="opcion_a">
-                <label for="opcion_a">Candidato A</label>
+                <label for="opcion_a" style="color: #3498db;">PP</label>
             </div>
             <div class="option">
                 <input type="radio" name="opcion" value="Candidato B" id="opcion_b">
-                <label for="opcion_b">Candidato B</label>
+                <label for="opcion_b" style="color: #e74c3c;">PSOE</label>
             </div>
             <div class="option">
                 <input type="radio" name="opcion" value="Candidato C" id="opcion_c">
-                <label for="opcion_c">Candidato C</label>
+                <label for="opcion_c" style="color: #9b59b6;">Unidas Podemos</label>
             </div>
             <div class="option">
                 <input type="radio" name="opcion" value="Candidato D" id="opcion_d">
-                <label for="opcion_d">Candidato D</label>
+                <label for="opcion_d" style="color: #f06292;">Sumar</label>
             </div>
             <div class="option">
                 <input type="radio" name="opcion" value="Candidato E" id="opcion_e">
-                <label for="opcion_e">Candidato E</label>
+                <label for="opcion_e">VOX</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="opcion" value="Candidato F" id="opcion_f">
+                <label for="opcion_f">Otros/No sabe</label>
             </div>
             <div class="btn-container">
                 <input type="submit" value="Votar" class="btn">
@@ -102,4 +114,3 @@
     </div>
 </body>
 </html>
-
