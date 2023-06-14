@@ -31,22 +31,23 @@ $conn->close();
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
+            background: linear-gradient(to right, #f9a825, #e53935);
+            color: #ffffff;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 40px;
-            background-color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
 
         h1 {
-            color: #333333;
-            font-size: 32px;
+            color: #ffffff;
+            font-size: 48px;
             margin-bottom: 30px;
         }
 
@@ -54,9 +55,14 @@ $conn->close();
             width: 100%;
             max-width: 600px;
             margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 40px;
         }
 
         .chart-title {
+            color: #ffffff;
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
@@ -69,9 +75,10 @@ $conn->close();
         }
 
         .chart-bar-label {
-            flex: 0 0 120px;
+            flex: 0 0 200px;
             text-align: right;
             padding-right: 10px;
+            color: #ffffff;
         }
 
         .chart-bar-value {
@@ -82,6 +89,27 @@ $conn->close();
             line-height: 30px;
             border-radius: 5px;
         }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background-color: #e53935;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            background-color: #c62828;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -90,7 +118,19 @@ $conn->close();
         <h1>Estadísticas de la Encuesta</h1>
 
         <div class="chart-container">
-            <canvas id="chart"></canvas>
+            <p class="chart-title">Opciones de Voto</p>
+            <div class="chart-bar">
+                <div class="chart-bar-label">Unidas Podemos</div>
+                <div class="chart-bar-value"><?php echo $statistics['Unidas Podemos'] ?? 0; ?></div>
+            </div>
+            <div class="chart-bar">
+                <div class="chart-bar-label">Sumar</div>
+                <div class="chart-bar-value"><?php echo $statistics['Sumar'] ?? 0; ?></div>
+            </div>
+            <div class="chart-bar">
+                <div class="chart-bar-label">Avanzar</div>
+                <div class="chart-bar-value"><?php echo $statistics['Avanzar'] ?? 0; ?></div>
+            </div>
         </div>
 
         <script>
@@ -101,19 +141,8 @@ $conn->close();
             var labels = Object.keys(statistics);
             var values = Object.values(statistics);
 
-            // Definir los colores para cada candidato
-            var colors = [];
-            labels.forEach(function(label) {
-                if (label === 'Candidato A') {
-                    colors.push('#3498db'); // Azul
-                } else if (label === 'Candidato B') {
-                    colors.push('#e74c3c'); // Rojo
-                } else if (label === 'Candidato C') {
-                    colors.push('#f39c12'); // Naranja
-                } else {
-                    colors.push('#4CAF50'); // Verde (por defecto)
-                }
-            });
+            // Definir los colores para cada opción
+            var colors = ['#3498db', '#e74c3c', '#f39c12'];
 
             // Configuración de la gráfica
             var ctx = document.getElementById('chart').getContext('2d');
