@@ -121,7 +121,7 @@ $conn->close();
         </head>
             <body>
                 <div class="chart-container">
-                <p class="chart-title">Opciones de Voto</p>
+    <p class="chart-title">Opciones de Voto</p>
                 <div class="chart-bar">
                     <div class="chart-bar-label">Unidas Podemos</div>
                     <div class="chart-bar-value"><?php echo $statistics['Unidas Podemos'] ?? 0; ?></div>
@@ -154,11 +154,12 @@ $conn->close();
                 </div>
             </div>
 
-        <canvas id="chart"></canvas>
+            <canvas id="chart"></canvas>
 
-        <div class="btn-container">
-            <a class="btn" href="index.php">Volver a la Encuesta</a>
-        </div>
+            <div class="btn-container">
+                <a class="btn" href="index.php">Volver a la Encuesta</a>
+            </div>
+
     </div>
 
     <script>
